@@ -1,0 +1,100 @@
+.sidebar {
+  width: 280px;
+  background: var(--background-color);
+  padding: 1.5rem;
+  border-right: 1px solid var(--border-color);
+  height: calc(100vh - 64px);
+  position: sticky;
+  top: 64px;
+  overflow-y: auto;
+}
+
+.sidebar-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.specialty-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.specialty-btn {
+  padding: 0.75rem 1rem;
+  border: none;
+  background: none;
+  text-align: left;
+  font-size: 1rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.specialty-btn::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 3px;
+  background-color: var(--primary-color);
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+}
+
+.specialty-btn:hover {
+  background-color: var(--surface-color);
+  color: var(--primary-color);
+  padding-left: 1.5rem;
+}
+
+.specialty-btn:hover::before {
+  transform: scaleY(1);
+}
+
+.specialty-btn.active {
+  background-color: var(--surface-color);
+  color: var(--primary-color);
+  font-weight: 500;
+  padding-left: 1.5rem;
+}
+
+.specialty-btn.active::before {
+  transform: scaleY(1);
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    top: 0;
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem;
+  }
+
+  .specialty-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 0.5rem;
+  }
+
+  .specialty-btn {
+    text-align: center;
+    padding: 0.5rem;
+  }
+
+  .specialty-btn:hover,
+  .specialty-btn.active {
+    padding-left: 0.5rem;
+  }
+} 

@@ -1,0 +1,126 @@
+.appointment-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background-color: #f5f5f5;
+}
+
+.appointment-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+}
+
+.appointment-card h2 {
+  color: #333;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.doctor-info {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.doctor-info h3 {
+  color: #007bff;
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.form-group {
+  margin-bottom: 2rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.form-group input[type="date"] {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.time-slots-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.time-slot-btn {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
+}
+
+.time-slot-btn:hover:not(:disabled) {
+  border-color: #007bff;
+  color: #007bff;
+}
+
+.time-slot-btn.selected {
+  background: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.time-slot-btn.unavailable {
+  background: #f5f5f5;
+  color: #999;
+  cursor: not-allowed;
+  border-color: #ddd;
+}
+
+.book-btn {
+  width: 100%;
+  padding: 1rem;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.book-btn:hover:not(:disabled) {
+  background: #0056b3;
+}
+
+.book-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .appointment-container {
+    padding: 1rem;
+  }
+
+  .appointment-card {
+    padding: 1.5rem;
+  }
+
+  .time-slots-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+} 

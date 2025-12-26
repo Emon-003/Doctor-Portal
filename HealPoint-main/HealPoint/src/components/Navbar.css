@@ -1,0 +1,457 @@
+/* src/components/Navbar.css */
+
+/* --- General Navbar Styles (Keep existing or adjust as needed) --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  font-family: 'Arial', sans-serif;
+}
+
+.navbar-left,
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 25px; /* Space between elements */
+}
+
+.logo a {
+  display: flex; /* Ensures image is correctly aligned */
+  align-items: center;
+}
+
+.logo-image {
+  height: 65px; 
+  width: auto;
+}
+
+.nav-links.desktop-nav {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-link {
+  color: #555;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.05em;
+  padding: 5px 0;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #007bff;
+}
+
+.nav-link.active {
+  color: #007bff;
+  font-weight: 600;
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 2px;
+  background-color: #007bff;
+  transform: scaleX(0);
+  animation: underline-grow 0.3s forwards;
+}
+
+@keyframes underline-grow {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.login-btn,
+.admin-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+.login-btn:hover,
+.admin-btn:hover {
+  background-color: #0056b3;
+  transform: translateY(-1px);
+}
+
+.admin-btn.active {
+  background-color: #0056b3; /* Darker blue when active */
+}
+
+/* --- User Profile Dropdown Styles --- */
+.UserProfile-dropdown {
+  position: relative;
+  display: inline-block;
+  z-index: 100; /* Ensure dropdown is above other content */
+}
+
+.UserProfile-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex; /* For centering the avatar */
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%; /* If there's a background on button */
+  transition: transform 0.2s ease;
+}
+
+.UserProfile-button:hover {
+  transform: translateY(-1px);
+}
+
+/* New: Styles for the initial avatar */
+.UserProfile-initial-avatar,
+.dropdown-avatar, /* For avatar inside dropdown */
+.mobile-user-avatar { /* For avatar in mobile menu */
+  width: 40px; /* Size for navbar/dropdown button */
+  height: 40px;
+  border-radius: 50%;
+  background-color: #4285F4; /* Google-blue color */
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2em; /* Font size for initial */
+  font-weight: 500;
+  flex-shrink: 0; /* Prevent shrinking in flex containers */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Subtle shadow */
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%; /* Position below the button */
+  right: 0; /* Align to the right of the button */
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  min-width: 200px;
+  padding: 10px 0;
+  z-index: 1001; /* Above other content */
+  transform-origin: top right;
+  animation: fadeInScale 0.2s ease-out forwards;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.dropdown-user-info {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  gap: 10px;
+}
+
+.dropdown-avatar {
+  width: 50px; /* Slightly larger in dropdown info */
+  height: 50px;
+  font-size: 1.5em;
+}
+
+.dropdown-user-name {
+  font-weight: 600;
+  color: #333;
+  word-break: break-word; /* Prevents long names from overflowing */
+}
+
+.dropdown-item {
+  width: 100%;
+  padding: 12px 15px;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: 1em;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-item:hover {
+  background-color: #f0f0f0;
+}
+
+.dropdown-item .dropdown-icon {
+  font-size: 1.2em;
+}
+
+.dropdown-divider {
+  border-top: 1px solid #eee;
+  margin: 10px 0;
+}
+
+.dropdown-item.logout {
+  color: #dc3545; /* Red for logout */
+}
+
+.dropdown-item.logout:hover {
+  background-color: #ffeaea; /* Light red hover */
+}
+
+/* --- Mobile Menu Styles --- */
+.mobile-menu-btn {
+  display: none; /* Hidden on desktop */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1001;
+}
+
+.mobile-menu-btn .menu-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+}
+
+.mobile-menu-btn .menu-icon span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-btn.active .menu-icon span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.mobile-menu-btn.active .menu-icon span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-btn.active .menu-icon span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%; /* Off-screen by default */
+  width: 70%; /* Adjust width as needed */
+  max-width: 300px;
+  height: 100%;
+  background-color: #ffffff;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+  transition: right 0.3s ease-out;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.mobile-menu.active {
+  right: 0;
+}
+
+.mobile-menu-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.close-menu-btn {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  font-size: 1.8em;
+  cursor: pointer;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.mobile-nav-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eee; /* Separator */
+  padding-bottom: 15px;
+}
+
+.mobile-nav-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+
+.mobile-nav-link {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 1.1em;
+  padding: 10px 5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background-color 0.2s ease;
+  border-radius: 5px;
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link.active {
+  background-color: #e6f2ff; /* Light blue background for active/hover */
+  color: #007bff;
+}
+
+.mobile-nav-link span {
+  font-size: 1.2em;
+}
+
+.mobile-nav-link.admin-link .admin-icon {
+    font-size: 1.1em;
+    color: #4CAF50; /* Green for admin */
+}
+
+/* Mobile user specific styles */
+.mobile-user-profile-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #333;
+    padding: 10px 5px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.mobile-user-profile-link:hover {
+    background-color: #f0f0f0;
+}
+
+/* mobile-user-avatar uses the same .UserProfile-initial-avatar styling */
+
+.mobile-user-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-user-name {
+    font-weight: 600;
+    font-size: 1em;
+    color: #333;
+}
+
+.mobile-user-view-profile {
+    font-size: 0.85em;
+    color: #007bff;
+}
+
+.mobile-logout-btn {
+  width: 100%;
+  padding: 12px 15px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: background-color 0.2s ease;
+  margin-top: 15px;
+}
+
+.mobile-logout-btn:hover {
+  background-color: #c82333;
+}
+
+.mobile-logout-btn .logout-icon {
+  font-size: 1.2em;
+}
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+  .navbar-left .desktop-nav,
+  .navbar-right .desktop-only {
+    display: none; /* Hide desktop nav links and login button */
+  }
+
+  .navbar-left {
+      gap: 15px; /* Adjust gap on smaller screens */
+  }
+
+  /* Admin panel button visibility on mobile:
+     Hide the one in navbar-left, keep the one in navbar-right for logged-in admin,
+     and show the one in the mobile menu. */
+  .navbar-left .admin-btn {
+      display: none;
+  }
+
+  .mobile-menu-btn {
+    display: block; /* Show hamburger icon */
+  }
+
+  .navbar-right {
+    gap: 15px; /* Adjust gap for consistency */
+  }
+
+  /* Adjust dropdown position for mobile if it's still used outside of the full mobile menu */
+  .UserProfile-dropdown {
+    position: static; /* Allows it to flow naturally, or adjust as needed */
+  }
+
+  .UserProfile-dropdown .dropdown-menu {
+      right: 0;
+      left: auto; /* Ensure it stays on the right */
+      min-width: 250px; /* Make it wider on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 10px 15px;
+  }
+
+  .logo-image {
+    height: 35px;
+  }
+
+  .UserProfile-initial-avatar,
+  .dropdown-avatar,
+  .mobile-user-avatar {
+    width: 35px; /* Smaller avatar on very small screens */
+    height: 35px;
+    font-size: 1em;
+  }
+}

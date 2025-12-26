@@ -1,0 +1,149 @@
+.specialty-section {
+  width: 100%;
+  padding: 2rem 0 0 0;
+  text-align: center;
+  background: none;
+  margin: 0 0 2.5rem 0;
+  position: relative;
+}
+
+.specialty-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2563eb;
+  margin-bottom: 0.5rem;
+}
+
+.specialty-title span {
+  color: #1d4ed8;
+}
+
+.specialty-desc {
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 2.2rem;
+}
+
+.front-page-specialty-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  gap: 1.5rem;
+  width: 100%;
+  padding: 1rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  overflow-x: hidden;
+  position: relative;
+  scroll-behavior: smooth;
+  transition: transform 0.5s ease;
+}
+
+.specialty-card {
+  flex: 0 0 200px;
+  min-width: 200px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(37, 99, 235, 0.07);
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  scroll-snap-align: start;
+}
+
+.specialty-card:hover {
+  box-shadow: 0 6px 24px rgba(37, 99, 235, 0.13);
+  transform: translateY(-4px);
+}
+
+.specialty-icon {
+  font-size: 2.2rem;
+  margin-bottom: 0.7rem;
+}
+
+.specialty-label {
+  font-size: 1.08rem;
+  color: #222;
+  font-weight: 500;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+/* .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #e2e8f0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+} */
+
+.dot.active {
+  background: #2563eb;
+  transform: scale(1.2);
+}
+
+/* Hide scrollbar but keep functionality */
+.front-page-specialty-list::-webkit-scrollbar {
+  display: none;
+}
+
+.front-page-specialty-list {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@media (max-width: 1400px) {
+  .nav-button.prev {
+    left: 20px;
+  }
+  .nav-button.next {
+    right: 20px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .specialty-card {
+    flex: 0 0 calc(25% - 1.5rem);
+  }
+}
+
+@media (max-width: 900px) {
+  .specialty-card {
+    flex: 0 0 calc(33.333% - 1.5rem);
+  }
+}
+
+@media (max-width: 600px) {
+  .front-page-specialty-list {
+    gap: 1rem;
+    padding: 1rem;
+  }
+  .specialty-card {
+    min-width: 160px;
+    padding: 0.8rem;
+  }
+  .specialty-icon {
+    font-size: 1.5rem;
+  }
+  .dot {
+    width: 8px;
+    height: 8px;
+  }
+} 

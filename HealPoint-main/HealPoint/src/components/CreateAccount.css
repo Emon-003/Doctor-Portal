@@ -1,0 +1,138 @@
+.create-account-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--background-color);
+}
+
+.create-account-card {
+  background: var(--surface-color);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
+  width: 100%;
+  max-width: 400px;
+}
+
+.create-account-card h2 {
+  margin: 0 0 0.5rem 0;
+  color: var(--text-primary);
+  text-align: center;
+}
+
+.subtitle {
+  color: var(--text-secondary);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.create-account-card label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.create-account-card input {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.create-account-btn {
+  width: 100%;
+  padding: 30px 20px;
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.create-account-btn:hover {
+  background: var(--primary-hover);
+}
+
+.login-link {
+  text-align: center;
+  margin-top: 1rem;
+  color: var(--text-secondary);
+}
+
+.login-link span {
+  color: var(--primary-color);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.login-link span:hover {
+  color: var(--primary-hover);
+}
+
+.error-message {
+  color: var(--error-color);
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.success-message {
+  color: var(--success-color);
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .create-account-container {
+    margin: 2rem auto;
+    padding: 1rem;
+  }
+
+  .create-account-card {
+    padding: 1.5rem;
+  }
+
+  .create-account-card h2 {
+    font-size: 1.8rem;
+  }
+}
+
+.navbar-buttons {
+  display: flex;
+  gap: 1rem; /* Space between buttons */
+}
+
+.admin-panel-btn {
+  padding: 0.75rem 1.5rem;
+  border: 1.5px solid var(--primary-color);
+  background: var(--surface-color);
+  color: var(--primary-color);
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.admin-panel-btn:hover {
+  background: var(--accent-color);
+  color: #fff;
+}
+
+.create-account-btn {
+  padding: 0.75rem 1.5rem;
+  background: #7c6cff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.create-account-btn:hover {
+  background: #5a4fdc;
+} 

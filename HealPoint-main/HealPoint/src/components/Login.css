@@ -1,0 +1,76 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--background-color);
+}
+
+.login-card {
+  background: var(--surface-color);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-card h2 {
+  margin: 0 0 0.5rem 0;
+  color: var(--text-primary);
+  text-align: center;
+}
+
+.subtitle {
+  color: var(--text-secondary);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.login-card label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.login-card input {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.login-btn {
+  width: 100px;
+  padding:15px 15px;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  text-align: center;
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.login-btn:hover {
+  background-color: var(--primary-hover);
+}
+
+.create-account-link {
+  text-align: center;
+  margin-top: 1rem;
+  color: var(--text-secondary);
+}
+
+.create-account-link span {
+  color: var(--primary-color);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.create-account-link span:hover {
+  color: var(--primary-hover);
+} 

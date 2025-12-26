@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* .about-section-wrapper {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  min-height: 100vh;
+  background-color: #f8fafc;
+} */
+
+.about-container {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.about-main-title {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.about-intro-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+  .about-intro-flex {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+.about-image-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .about-image-wrapper {
+    width: 50%;
+  }
+}
+
+.about-image {
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.5s ease-in-out;
+}
+
+.about-image:hover {
+  transform: scale(1.02)
+}
+
+.about-text-content {
+  width: 100%;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .about-text-content {
+    width: 50%;
+    text-align: left;
+  }
+}
+
+.about-text-content p {
+  font-size: 1.125rem;
+  color: #4a5568;
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
+}
+
+.about-text-content p:last-child {
+  margin-bottom: 0;
+}
+
+.why-choose-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.why-choose-us-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .why-choose-us-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.feature-item {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  border: 1px solid #bfdbfe;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.feature-item:hover {
+  background: #dbdbdb;
+  transform: translateY(-5px);
+}
+
+.feature-item h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2b6cb0;
+  margin-bottom: 1rem;
+}
+
+.feature-item p {
+  color: #4a5568;
+}
